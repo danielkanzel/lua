@@ -11,11 +11,13 @@ jobs:
         run: |
           curl -LO https://www.lua.org/ftp/lua-5.5.0.tar.gz
           sha256sum lua-5.5.0.tar.gz > checksum.txt  # Опционально: создание checksum
+          mv lua-5.5.0.tar.gz lua-5.5.0
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
+            lua-5.5.0
             lua-5.5.0.tar.gz
             checksum.txt  # Опционально: включение checksum
           tag_name: ${{ github.ref_name }}
