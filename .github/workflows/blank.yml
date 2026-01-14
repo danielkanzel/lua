@@ -21,6 +21,6 @@ jobs:
             lua-5.5.0.tar.gz
             checksum.txt  # Опционально: включение checksum
           tag_name: ${{ github.ref_name }}
-          name: "Lua 5.5.0 Release"
+          name: "Lua 5.5.0 Release 2"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
