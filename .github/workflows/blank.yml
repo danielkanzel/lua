@@ -15,6 +15,7 @@ jobs:
           cd lua-5.5.0
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
+          git pull
           git add . 
           git commit -m "lua-5.5.0" 
           git push
