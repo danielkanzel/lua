@@ -7,12 +7,11 @@ jobs:
   release-lua:
     runs-on: ubuntu-latest
     steps:
-      - name: Download Lua 5.5.0
-        run: |
-          curl -L https://www.lua.org/ftp/lua-5.5.0.tar.gz | tar xz
       - uses: actions/checkout@v4
       - name: Git
         run: |
+          sleep 10
+          curl -L https://www.lua.org/ftp/lua-5.5.0.tar.gz | tar xz
           cd lua-5.5.0
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
