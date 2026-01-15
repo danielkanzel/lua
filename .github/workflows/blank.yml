@@ -12,6 +12,8 @@ jobs:
         run: |
           sleep 20
           curl -L https://www.lua.org/ftp/lua-5.5.0.tar.gz | tar xz
+          rm -r src
+          rm -r doc
           mv lua-5.5.0/* .
           rm -r lua-5.5.0
           git config user.name "GitHub Actions Bot"
