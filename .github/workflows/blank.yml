@@ -20,12 +20,20 @@ jobs:
           git add . 
           git commit -m "lua-5.5.0" 
           git push
+      - name: Generate release tag
+        id: generate_release_tag
+        uses: alexvingg/next-release-tag@v1.0.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: ''
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             lua-5.5.0.tar.gz
-          name: "Lua 5.5.0 Release"
+          name: Release ${{ steps.generate_release_tag.outputs.release_tag }}
+          tag: ${{ steps.generate_release_tag.outputs.release_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
