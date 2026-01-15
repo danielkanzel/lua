@@ -21,7 +21,7 @@ jobs:
           git pull
           git add . 
           git commit -m "lua-5.5.0" 
-          git push
+          git push || true
       - name: Generate release tag
         id: generate_release_tag
         uses: alexvingg/next-release-tag@v1.0.4
