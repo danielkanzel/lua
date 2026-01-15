@@ -12,7 +12,9 @@ jobs:
         run: |
           sleep 10
           curl -L https://www.lua.org/ftp/lua-5.5.0.tar.gz | tar xz
+          ls
           cd lua-5.5.0
+          ls
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git pull
